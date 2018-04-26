@@ -9,11 +9,9 @@ function createMultiplier(x){
 var doubler = createMultiplier(2);
 var tripler = createMultiplier(3);
 
-function multiplier(x){
-	return function(num){
-		return x*num;
-	}.bind(this);
+function multiplier(x, y){
+	return x*y;
 };
 
-var doublerWithBind = multiplier(2);
-var triplerWithBind = multiplier(3);
+var doublerWithBind = multiplier.bind(null, 2);
+var triplerWithBind = multiplier.bind(null, 3);
